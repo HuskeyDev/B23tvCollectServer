@@ -1,0 +1,6 @@
+@B23tvCollect_HostAddress = http://localhost:5137
+
+GET {{B23tvCollect_HostAddress}}/api/B23tvCollect/
+Accept: application/json
+
+###
