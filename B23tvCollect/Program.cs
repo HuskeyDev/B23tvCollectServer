@@ -8,6 +8,7 @@ using Serilog;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using B23tvCollect.Services.MemoryCache;
 
 namespace B23tvCollect
 {
@@ -66,6 +67,9 @@ namespace B23tvCollect
 
             //添加数据库单例
             builder.Services.AddSingleton(new AppRocksDb(dbOptions, dbPath));
+
+            //添加内存缓存服务
+            builder.Services.AddHostedService<MemoryCacheService>();
 
             builder.Services.AddControllers();
 
